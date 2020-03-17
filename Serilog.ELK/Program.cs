@@ -50,8 +50,7 @@ namespace Serilog.ELK
                             { "failingStatusCode", statuscode},
                             { "failingException", exception}
                         });
-                    },
-                    FailureSink = new FileSink("./var/failure/failures.log", new JsonFormatter(), null)
+                    }
                 })
                 .WriteTo.Console()
                 .WriteTo.Async(a=> a.File("./var/log/log.log", rollingInterval: RollingInterval.Day, fileSizeLimitBytes: null, shared: true), bufferSize: 500)
