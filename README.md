@@ -1,0 +1,1 @@
+Sistema de desenvolvido para testar o ELK stack com Serilog, com o objetivo de definir a melhor configuração para o serviço.
