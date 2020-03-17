@@ -51,11 +51,11 @@ namespace Serilog.ELK
                             { "failingException", exception}
                         });
                     },
-                    FailureSink = new FileSink("./failures.txt", new JsonFormatter(), null)
+                    FailureSink = new FileSink("./var/failure/failures.log", new JsonFormatter(), null)
                 })
                 .WriteTo.Console()
-                .WriteTo.Async(a=> a.File("log.txt", rollingInterval: RollingInterval.Day, fileSizeLimitBytes: null, shared: true), bufferSize: 500)
-                .AuditTo.File("audit.txt")
+                .WriteTo.Async(a=> a.File("./var/log/log.log", rollingInterval: RollingInterval.Day, fileSizeLimitBytes: null, shared: true), bufferSize: 500)
+                .AuditTo.File("./var/audit/audit.log")
                 .CreateLogger();
 
 

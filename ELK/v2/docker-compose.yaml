@@ -2,39 +2,39 @@ version: "3.7"
 
 services:
   elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch:7.6.1
+    image: docker.elastic.co/elasticsearch/elasticsearch:${ELASTICSEARCH_VERSION}
     container_name: elasticsearch
     ports:
       - "9200:9200"
       - "9300:9300"
     volumes:
       - ./elasticsearch-data:/usr/share/elasticsearch/data
-    # environment:
-    #   - discovery.type=single-node
-    #   - xpack.security.enabled=false
-    #   - xpack.monitoring.enabled=true
-    #   - xpack.watcher.enabled=false
-    #   - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - xpack.monitoring.enabled=true
+      - xpack.watcher.enabled=false
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
     networks:
       - elk
     restart: unless-stopped
 
   kibana:
-    image: docker.elastic.co/kibana/kibana:7.6.1
+    image: docker.elastic.co/kibana/kibana:${ELASTICSEARCH_VERSION}
     container_name: kibana
     ports:
       - "5601:5601"
     depends_on:
       - elasticsearch
-    # environment:
-    #   - ELASTICSEARCH_HOSTS=${ELASTICSEARCH_URL}
-    #   - XPACK_MONITORING_ENABLED=true
+    environment:
+      - ELASTICSEARCH_HOSTS=${ELASTICSEARCH_URL}
+      - XPACK_MONITORING_ENABLED=true
     networks:
       - elk
     restart: unless-stopped
 
   logstash:
-    image: logstash:7.6.1
+    image: docker.elastic.co/logstash/logstash:${ELASTICSEARCH_VERSION}
     container_name: logstash
     ports:
       - "5000:5000/tcp"
@@ -43,14 +43,14 @@ services:
       - "5044:5044"
     depends_on:
       - elasticsearch
-    # environment:
-    #   LS_JAVA_OPTS: "-Xmx256m -Xms256m"
+    environment:
+      LS_JAVA_OPTS: "-Xmx256m -Xms256m"
     networks:
       - elk
     volumes:
-      - ./config-dir:/config-dir
-      - ./logstash-output:/usr/share/elasticsearch/output
-    command: logstash --debug -f /config-dir/logstash.conf
+      - ./logstash/config-dir:/usr/share/logstash/pipeline/
+      - ./logstash/output:/usr/share/elasticsearch/output
+    # command: logstash --debug -f /config-dir/logstash.conf
     restart: unless-stopped
 
 networks:

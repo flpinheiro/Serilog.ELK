@@ -1,0 +1,93 @@
+2020-03-17 16:10:38.708 -03:00 [INF] Starting web host
+2020-03-17 16:10:39.692 -03:00 [DBG] Attempting to connect to TCP endpoint "tls://localhost:5600/" after delay of 1 seconds
+2020-03-17 16:10:43.706 -03:00 [ERR] failure inside TCP socket: No connection could be made because the target machine actively refused it. [::ffff:127.0.0.1]:5600 - socket error found "ConnectionRefused"
+System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (10061): No connection could be made because the target machine actively refused it. [::ffff:127.0.0.1]:5600
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw(Exception source)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.Socket.DoMultipleAddressConnectCallback(Object result, MultipleAddressConnectAsyncResult context)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw(Exception source)
+   at System.Net.Sockets.Socket.DoMultipleAddressConnectCallback(Object result, MultipleAddressConnectAsyncResult context)
+   at System.Net.Sockets.Socket.MultipleAddressConnectCallback(IAsyncResult result)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw(Exception source)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.TcpClient.EndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.TcpClient.<>c.<ConnectAsync>b__28_1(IAsyncResult asyncResult)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at Serilog.Sinks.Network.Sinks.TCP.TcpSocketWriter.<>c__DisplayClass9_0.<<-ctor>b__0>d.MoveNext()
+2020-03-17 16:11:54.978 -03:00 [INF] Starting web host
+2020-03-17 16:11:55.698 -03:00 [DBG] Attempting to connect to TCP endpoint "tls://localhost:5600/" after delay of 1 seconds
+2020-03-17 16:11:59.711 -03:00 [ERR] failure inside TCP socket: No connection could be made because the target machine actively refused it. [::ffff:127.0.0.1]:5600 - socket error found "ConnectionRefused"
+System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (10061): No connection could be made because the target machine actively refused it. [::ffff:127.0.0.1]:5600
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw(Exception source)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.Socket.DoMultipleAddressConnectCallback(Object result, MultipleAddressConnectAsyncResult context)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw(Exception source)
+   at System.Net.Sockets.Socket.DoMultipleAddressConnectCallback(Object result, MultipleAddressConnectAsyncResult context)
+   at System.Net.Sockets.Socket.MultipleAddressConnectCallback(IAsyncResult result)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw(Exception source)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.TcpClient.EndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.TcpClient.<>c.<ConnectAsync>b__28_1(IAsyncResult asyncResult)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at Serilog.Sinks.Network.Sinks.TCP.TcpSocketWriter.<>c__DisplayClass9_0.<<-ctor>b__0>d.MoveNext()
+2020-03-17 19:18:49.349 +00:00 [INF] Starting web host
+2020-03-17 19:18:50.576 +00:00 [DBG] Attempting to connect to TCP endpoint "tls://localhost:5600/" after delay of 1 seconds
+2020-03-17 19:18:50.589 +00:00 [ERR] failure inside TCP socket: Cannot assign requested address - socket error found "AddressNotAvailable"
+System.Net.Sockets.SocketException (99): Cannot assign requested address
+   at System.Net.Sockets.Socket.BeginConnectEx(EndPoint remoteEP, Boolean flowContext, AsyncCallback callback, Object state)
+   at System.Net.Sockets.Socket.UnsafeBeginConnect(EndPoint remoteEP, AsyncCallback callback, Object state, Boolean flowContext)
+   at System.Net.Sockets.Socket.PostOneBeginConnect(MultipleAddressConnectAsyncResult context)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw(Exception source)
+   at System.Net.Sockets.Socket.DoMultipleAddressConnectCallback(Object result, MultipleAddressConnectAsyncResult context)
+   at System.Net.Sockets.Socket.MultipleAddressConnectCallback(IAsyncResult result)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw(Exception source)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.TcpClient.EndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.TcpClient.<>c.<ConnectAsync>b__28_1(IAsyncResult asyncResult)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at Serilog.Sinks.Network.Sinks.TCP.TcpSocketWriter.<>c__DisplayClass9_0.<<-ctor>b__0>d.MoveNext()
+2020-03-17 19:18:51.624 +00:00 [DBG] Attempting to connect to TCP endpoint "tls://localhost:5600/" after delay of 3 seconds
+2020-03-17 19:18:51.650 +00:00 [ERR] failure inside TCP socket: Cannot assign requested address - socket error found "AddressNotAvailable"
+System.Net.Sockets.SocketException (99): Cannot assign requested address
+   at System.Net.Sockets.Socket.BeginConnectEx(EndPoint remoteEP, Boolean flowContext, AsyncCallback callback, Object state)
+   at System.Net.Sockets.Socket.UnsafeBeginConnect(EndPoint remoteEP, AsyncCallback callback, Object state, Boolean flowContext)
+   at System.Net.Sockets.Socket.PostOneBeginConnect(MultipleAddressConnectAsyncResult context)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw(Exception source)
+   at System.Net.Sockets.Socket.DoMultipleAddressConnectCallback(Object result, MultipleAddressConnectAsyncResult context)
+   at System.Net.Sockets.Socket.MultipleAddressConnectCallback(IAsyncResult result)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw(Exception source)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.TcpClient.EndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.TcpClient.<>c.<ConnectAsync>b__28_1(IAsyncResult asyncResult)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at Serilog.Sinks.Network.Sinks.TCP.TcpSocketWriter.<>c__DisplayClass9_0.<<-ctor>b__0>d.MoveNext()
+2020-03-17 19:18:54.653 +00:00 [DBG] Attempting to connect to TCP endpoint "tls://localhost:5600/" after delay of 7 seconds
+2020-03-17 19:18:54.670 +00:00 [ERR] failure inside TCP socket: Cannot assign requested address - socket error found "AddressNotAvailable"
+System.Net.Sockets.SocketException (99): Cannot assign requested address
+   at System.Net.Sockets.Socket.BeginConnectEx(EndPoint remoteEP, Boolean flowContext, AsyncCallback callback, Object state)
+   at System.Net.Sockets.Socket.UnsafeBeginConnect(EndPoint remoteEP, AsyncCallback callback, Object state, Boolean flowContext)
+   at System.Net.Sockets.Socket.PostOneBeginConnect(MultipleAddressConnectAsyncResult context)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw(Exception source)
+   at System.Net.Sockets.Socket.DoMultipleAddressConnectCallback(Object result, MultipleAddressConnectAsyncResult context)
+   at System.Net.Sockets.Socket.MultipleAddressConnectCallback(IAsyncResult result)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw(Exception source)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.TcpClient.EndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.TcpClient.<>c.<ConnectAsync>b__28_1(IAsyncResult asyncResult)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at Serilog.Sinks.Network.Sinks.TCP.TcpSocketWriter.<>c__DisplayClass9_0.<<-ctor>b__0>d.MoveNext()

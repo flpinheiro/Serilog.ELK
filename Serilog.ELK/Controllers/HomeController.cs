@@ -24,7 +24,7 @@ namespace Serilog.ELK.Controllers
         {
             Log.Information("The global logger has been configured");
             _diagnosticContext.Set("CatalogLoadTime", 1423);
-            _logger.Log(LogLevel.Error,"ERRO DA PORRA");
+            _logger.Log(LogLevel.Error, "CatalogLoadTime");
             return View();
         }
 

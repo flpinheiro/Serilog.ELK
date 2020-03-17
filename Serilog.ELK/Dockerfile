@@ -20,3 +20,9 @@ FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
 ENTRYPOINT ["dotnet", "Serilog.ELK.dll"]
+
+FROM docker.elastic.co/beats/filebeat:7.6.1
+COPY filebeat.yml /usr/share/filebeat/filebeat.yml
+USER root
+RUN chown root:filebeat /usr/share/filebeat/filebeat.yml
+USER filebeat

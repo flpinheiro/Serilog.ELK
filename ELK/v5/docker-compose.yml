@@ -12,6 +12,8 @@ services:
     networks:
     - docker-network
     restart: always
+    environment:
+      ES_JAVA_OPTS: "-Xmx256m -Xms256m"
 
   kibana:
     image: docker.elastic.co/kibana/kibana:7.6.1
@@ -22,6 +24,8 @@ services:
     - elasticsearch
     networks:
     - docker-network
+    # volumes:
+    #   - ./kibana/config/:/usr/share/kibana/config:ro    
     restart: always
   
   logstash:
@@ -35,10 +39,13 @@ services:
     - "9600:9600"
     - "5000:5000"
     - "5044:5044"
+    - "8080:8080"
     volumes:
-    - ./pipeline:/usr/share/logstash/pipeline/
-    - ./debug:/var/log/
+    - ./logstash/config:/usr/share/logstash/pipeline/
+    - ./var/log:/var/log/
     restart: always
+    environment:
+      LS_JAVA_OPTS: "-Xmx256m -Xms256m"    
   
 networks:
   docker-network:
