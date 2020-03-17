@@ -33,8 +33,6 @@ filter {
     }
 }
 output {
-    # Uncomment the following line to send all processed log entries to Logstash log file
-    #stdout { codec => rubydebug }
     if [docker][container][name] == "ggr" {
         elasticsearch {
             hosts => "elasticsearch:9200"

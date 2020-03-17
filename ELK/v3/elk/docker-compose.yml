@@ -31,8 +31,11 @@ services:
     ports:
     - 5044:5044
     restart: unless-stopped
+    command: logstash --debug -f /config-dir/logstash.conf
     volumes:
     - ./etc/logstash/pipeline:/usr/share/logstash/pipeline:ro
+    - ./config-dir:/config-dir
+    - ./logstash-output:/usr/share/elasticsearch/output
 
   kibana:
     depends_on:
